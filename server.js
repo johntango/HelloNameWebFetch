@@ -1,7 +1,7 @@
 let express = require('express');
 let bodyParser = require('body-parser');
 let path = require('path');
-const ejs = require('ejs'); // Import the ejs module
+//const ejs = require('ejs'); // Import the ejs module
 let app = express();
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -10,15 +10,12 @@ const port = 3001;
 
 app.use(express.static('./public'));
 // serve from public
-// Set the view engine to ejs
-app.set('view engine', 'ejs');
-app.set('views', './views');
 
-let names = ['Fred']; // Array to store names
+let names = []; // Array to store names
 
 app.get('/', (req, res) => {
   // send the names to the template
-  res.sendFile(path.join(__dirname, './public', 'index.html')
+  res.sendFile(path.join(__dirname, './public', 'index.html'));
 });
 
 app.post('/add-name', (req, res) => {

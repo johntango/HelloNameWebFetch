@@ -18,7 +18,7 @@
       function writeNames(names) {
         const namesList = document.getElementById("names");
         namesList.innerHTML = ""; // Clear the list before adding new names
-        namesArray.forEach((name) => {
+        names.forEach((name) => {
           const listItem = document.createElement("li");
           listItem.textContent = name;
           namesList.appendChild(listItem);
